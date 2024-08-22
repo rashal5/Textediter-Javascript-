@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #116466;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #D9B08C;
+            width: 850px;
+            height: 700px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .header {
+            background-color: #2C3531;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            font-size: 18px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;      
+            margin-bottom: 15px;    
+        }
+        label {
+            font-family: Arial, sans-serif;
+            font-size: 16px;          
+            font-weight: bold;         
+            color: #333;           
+            margin-right: 10px;          
+            width: 150px;            
+            text-align: right;      
+        }
+        .bot {
+            font-family: Arial, sans-serif; 
+            font-size: 16px;              
+            font-weight: bold;     
+            color: #333; 
+            margin-right: 138px;         
+            margin-right: 10px;            
+            width: 150px;                  
+            text-align: right;             
+        }
+        input, textarea, select {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            background-color: #D1D2D4;
+            padding: 16px;
+            margin-right: 12px;
+            border: 1px solid #ccc;   
+            border-radius: 4px;        
+            flex-grow: 1;          
+            box-sizing: border-box;  
+        }
+        textarea{
+            padding-right: 20px;
+        }
+        .form-container {
+            width: 100%;
+    max-width: 742px;
+    margin: 0 auto;
+    padding: 37px;
+    background: #D9B08C;
+    border-radius: 8px;
+
+        }
+        .ino {
+            display: inline-flex;
+             margin-top: -5px
+        }
+        .get {
+            width: 70%;
+    max-width: 605px;
+    margin-top: 10px;
+    padding: 128px;
+    background: #9b9b93;
+    border-radius: 8px;
+    overflow: scroll !important;
+    margin-bottom: 36px;
+    margin-right: -15px;
+    padding-bottom: 195px;
+    height: 100%;
+    outline: none;
+    position: relative;
+        }
+        button {
+            background-color: #116466; 
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 15px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+        button1 {
+            background-color: in; 
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 15px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+        .tex{
+            line-height: 24px;
+    padding-top: 10px;
+    white-space: unset;
+        }
+        .color-btn {
+            background-color: var(#e62e2e);
+        }
+        
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Text editor
+        </div>   
+
+        <div class="form-container">
+            <div class="ino" >
+                <label for="first-name">ENTER THE TEXT</label>
+                <input type="text" class="textarea" id="inputText" name="first-name" placeholder="put text here">
+                <button onclick="getname()"> edit</button><br>
+                <label for="first-name">color</label>
+                <input type="color" id="inputcolor" name="colorPicker" value="#179edd">
+                <div class="js-palette-color" data-hex="#DAF7A6" data-rgb="218, 247, 166" data-hsl="81, 33%, 81%" style="background-color: rgb(218, 247, 166);"></div>
+                <button onclick="setcolor()"> set color</button>
+            </div>
+            <div>
+                <div class="get">
+                    <p id="idnum" class="tex" ></p>
+                  </div>
+            </div>
+            <div>
+                <button onclick="bold()">
+                    <img src="https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/text-bold-1024.png" alt="Bold" style="width: 20px; height: 20px;">
+                </button>
+               <button class="color-btn" onclick="changecolor()" style="background-color:var(inputb);">
+                <img src="https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/design_graphic_sign_icon_symbol-1024.png" alt="Bold" style="width: 20px; height: 20px;">
+            </button>
+               <button onclick="cap()">
+                <img src="https://cdn2.iconfinder.com/data/icons/editorial-6/24/editorial_capitalize-512.png" alt="Bold" style="width: 20px; height: 20px;">
+            </button>
+               <button onclick="stylechange()">
+                <img src="https://th.bing.com/th/id/OIP.-8ZVSul64OQi6cFETQ0MsAHaHa?rs=1&pid=ImgDetMain" alt="Bold" style="width: 20px; height: 20px;"></button>
+               <button onclick="cleartxt()">
+                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3215028/eraser-icon-md.png" alt="Bold" style="width: 20px; height: 20px;"></button>
+                
+                <label for="fontSize">Select Font Size: </label>
+                <input type="number" id="fontSize" name="fontSize" min="10" max="72" value="16">
+                <button onclick="changesz()">Apply</button>
+            
+            
+            
+            
+                </div>
+           
+
+    <script>
+        function getname(){
+            var inputa = document.getElementById('inputText').value.trim();
+            document.getElementById("idnum").innerHTML=inputa
+        }
+        let inputb = ''; 
+
+        function setcolor() {
+            inputb = document.getElementById('inputcolor').value.trim();
+            var button = document.querySelector('.color-btn');
+            button.style.backgroundColor = inputb;
+        }
+
+        function changecolor() {
+            document.getElementById('idnum').style.color = inputb;
+        }
+        function bold(){
+            var element = document.getElementById('idnum');
+            if (element.style.fontWeight === 'bold') {
+               element.style.fontWeight = 'normal';
+            } else {
+               element.style.fontWeight = 'bold';
+            }
+        }
+        
+        function cap(){
+            const element = document.getElementById('idnum');
+            const nowText = element.textContent;
+            
+            if (nowText === nowText.toUpperCase()) {
+                element.textContent = nowText.toLowerCase();
+            } else {
+                element.textContent = nowText.toUpperCase();
+            }
+
+            }
+       
+        function stylechange(){
+            var element = document.getElementById('idnum');
+    if (element.style.fontStyle === 'italic') {
+        element.style.fontStyle = 'normal';
+    } else {
+        element.style.fontStyle = 'italic';
+    }
+    }
+    function cleartxt(){
+        document.getElementById('idnum').innerText = '';
+    }
+    let inputsize = ''; 
+
+    function changesz() {
+    inputsize = document.getElementById('fontSize').value.trim();
+    inputsize = inputsize+'px'
+    document.getElementById('idnum').style.fontSize = inputsize;
+    }
+
+    
+
+
+    </script>
+        </div>
+    </div>
+
+   
+    
+    
+
+</body>
+</html>
+    
